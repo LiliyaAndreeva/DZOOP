@@ -1,5 +1,7 @@
 package Unit;
 
+import java.util.Random;
+
 public abstract class Magi extends BaseHero { // маги
 
 
@@ -18,5 +20,6 @@ public abstract class Magi extends BaseHero { // маги
     }
 
     ;
+
 
 }

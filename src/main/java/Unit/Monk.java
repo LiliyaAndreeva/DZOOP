@@ -1,12 +1,18 @@
 package Unit;
 
 public class Monk extends Magi { // монах
-    public Monk(String name) {
+    public Monk(String name, String weapon) {
         super(50, "M", 15, 5, new int[]{-1, -3}, 5);
 
     }
 
     private boolean manaAdd(){return true;};
+
+    @Override
+    public String getInfo(){
+        return "Magi";
+    }
+
 
 
     @Override

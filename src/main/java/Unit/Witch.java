@@ -9,6 +9,10 @@ public class Witch extends Magi{
     private void protection(){};
 
     @Override
+    public String getInfo(){
+        return "Magi";
+    }
+    @Override
     public void step() {
         cure();
         protection();

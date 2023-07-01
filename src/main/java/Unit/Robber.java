@@ -9,6 +9,10 @@ public class Robber extends Infantry{ // разбойник
     private void hit (){}; // удар
 
     @Override
+    public String getInfo(){
+        return "Infantry";
+    }
+    @Override
     public void step() {
         looting();
         hit();

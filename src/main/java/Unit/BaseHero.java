@@ -34,6 +34,11 @@ public abstract class BaseHero implements InGameInterface{
         return name;
     }
     public void step(){};
+
+    protected static String getWeapon() {
+        String w = String.valueOf(BaseHero.Weapon.values().length);
+        return w;
+    }
 }
 
 

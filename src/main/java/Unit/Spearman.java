@@ -16,6 +16,10 @@ public class Spearman extends Infantry {
     ; // удар
 
     @Override
+    public String getInfo(){
+        return "Infantry";
+    }
+    @Override
     public void step() {
         throwAvay();
         hit();

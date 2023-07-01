@@ -9,6 +9,10 @@ public class Sniper extends Shooter{
     private void fire(){};
 
     @Override
+    public String getInfo(){
+        return "Shooter";
+    }
+    @Override
     public void step(){
         reArm();
         fire();

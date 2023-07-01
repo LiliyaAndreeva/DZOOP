@@ -14,6 +14,10 @@ public class Peasant extends Infantry { // крестьянин
     }
 
     ;
+    @Override
+    public String getInfo(){
+        return "Infantry";
+    }
 
     @Override
     public void step() {
