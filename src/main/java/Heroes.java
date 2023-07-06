@@ -5,14 +5,15 @@ import java.util.Random;
 
 public class Heroes {
     public static void main(String[] args) {
-        BaseHero monk = new Monk(getNames(), getWeapon());
+        BaseHero monk = new Monk(getNames(), 1, 1 );
 
-        BaseHero monk2 = new Monk("Kirill", getWeapon());
-        BaseHero sniper = new Sniper("Kyle");
-        BaseHero robber = new Robber("Alex");
-        BaseHero peasant = new Peasant("Prohor");
-        BaseHero witch = new Witch("Salma");
-        BaseHero spearman = new Spearman("Antip");
+        BaseHero monk2 = new Monk("Kirill", 1, 1);
+        BaseHero monk3 = new Monk(getNames(),1, 1);
+        BaseHero sniper = new Sniper("Kyle", 1,1);
+        BaseHero robber = new Robber("Alex", 1,1);
+        BaseHero peasant = new Peasant("Prohor",1,1);
+        BaseHero witch = new Witch("Salma",1, 1);
+        BaseHero spearman = new Spearman("Antip", 1, 1);
 
         monk.step();
         sniper.step();
@@ -33,6 +34,9 @@ public class Heroes {
                 teamTwo) {
             System.out.println(c.getInfo());
         }
+
+        teamOne.forEach(n->n.step(teamTwo));
+        teamTwo.forEach(n->n.step(teamOne));
     }
 
 
@@ -42,27 +46,27 @@ public class Heroes {
                 int r = new Random().nextInt(0,6);
                 switch (r) {
                     case 0: {
-                        list.add(new Monk(getNames(), getWeapon()));
+                        list.add(new Monk(getNames(),1, 1));
                         break;
                     }
                     case 1: {
-                        list.add(new Witch("Salma"));
+                        list.add(new Witch("Salma", 1,1));
                         break;
                     }
                     case 2: {
-                        list.add(new Peasant("Prohor"));
+                        list.add(new Peasant("Prohor", 1, 1));
                         break;
                     }
                     case 3: {
-                        list.add(new Robber("Alex"));
+                        list.add(new Robber("Alex", 1, 1));
                         break;
                     }
                     case 4: {
-                        list.add(new Sniper("Kyle"));
+                        list.add(new Sniper("Kyle",1 ,1));
                         break;
                     }
                     default: {
-                        list.add(new Spearman("Antip"));
+                        list.add(new Spearman("Antip",1,1));
                         break;
 
                     }
@@ -72,6 +76,9 @@ public class Heroes {
         }
 
 
+    public void step(ArrayList<BaseHero> teamProtivnic) {
+        System.out.println("Шаг вперед");
+    }
     private static String getNames() {
         String s = String.valueOf(Mana.Names.values()[new Random().nextInt(Mana.Names.values().length)]);
         return s;

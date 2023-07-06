@@ -1,8 +1,10 @@
 package Unit;
 
+import java.util.ArrayList;
+
 public class Monk extends Magi { // монах
-    public Monk(String name, String weapon) {
-        super(50, "M", 15, 5, new int[]{-1, -3}, 5);
+    public Monk(String name, int x, int y) {
+        super(50, "M",  15, 5, new int []{-2,3}, 2, 9,3, 1);
 
     }
 
@@ -16,7 +18,7 @@ public class Monk extends Magi { // монах
 
 
     @Override
-    public void step() {
+    public void step(ArrayList<BaseHero> teamProtivnic) {
         manaCast();
         manaAdd();
         System.out.println("Кастанул магию!");

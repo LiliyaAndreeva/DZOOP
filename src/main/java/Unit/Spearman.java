@@ -1,8 +1,11 @@
 package Unit;
 
+import java.util.ArrayList;
+
 public class Spearman extends Infantry {
-    public Spearman(String name) { //копейщик
-        super(40, "M", 15, 4, new int[]{5, 7}, 7);
+    public Spearman(String name, int x, int y) { //копейщик
+
+        super(35, "M", 15, 10, new int[]{5,8}, 6, 1 ,4,2);
     }
 
     private void throwAvay() {
@@ -20,7 +23,7 @@ public class Spearman extends Infantry {
         return "Infantry";
     }
     @Override
-    public void step() {
+    public void step(ArrayList<BaseHero> teamProtivnic) {
         throwAvay();
         hit();
         System.out.println("Попадание");
