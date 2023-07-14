@@ -1,6 +1,7 @@
 import Unit.*;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Random;
 
 public class Heroes {
@@ -22,10 +23,16 @@ public class Heroes {
         witch.step();
         spearman.step();
 
+
         ArrayList<BaseHero> teamOne = new ArrayList<>();
         ArrayList<BaseHero> teamTwo = new ArrayList<>();
-        fillList(teamOne);
-        fillList(teamTwo);
+        ArrayList<BaseHero> allTeam = new ArrayList<>();
+        fillList(teamOne, 1, 10);
+        fillList(teamTwo,10,1);
+        allTeam.addAll(teamOne);
+        allTeam.addAll(teamTwo);
+        allTeam.sort(Comparator.comparingInt(BaseHero::getInitiative));
+
         for (BaseHero c :
                 teamOne) {
             System.out.println(c.getInfo());
@@ -41,7 +48,7 @@ public class Heroes {
 
 
 
-        public static void fillList (ArrayList<BaseHero> list){
+        public static void fillList (ArrayList<BaseHero> list, int x, int y){
             for(int i=0; i<10; i++){
                 int r = new Random().nextInt(0,6);
                 switch (r) {
