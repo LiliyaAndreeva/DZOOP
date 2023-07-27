@@ -1,3 +1,5 @@
+package Game.Views;
+
 public enum Mana {
     FireBolt(6,12,3), Speed(0,0,-4);
 
